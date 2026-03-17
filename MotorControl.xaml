@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="SPIGAIICode.MotorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="Auto" Width="260" Margin="10">
+    <Border Background="#8da9f4" BorderBrush="#3e5ebf" BorderThickness="2" CornerRadius="2">
+        <StackPanel>
+            <Border Background="#4a86e8" Padding="10">
+                <TextBlock Text="{Binding HeaderTitle, FallbackValue='Motor'}" 
+                           Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" FontSize="16"/>
+            </Border>
+
+            <Border Background="White" Margin="10" Padding="15" Height="100">
+                <StackPanel VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding Position}" FontSize="28" FontWeight="Bold" Foreground="Black"/>
+                        <TextBlock Text=" pulse" FontSize="20" FontWeight="Bold" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,0,5"/>
+                    </StackPanel>
+                    <TextBlock Text="Current Position" Foreground="Gray" HorizontalAlignment="Center" FontSize="10"/>
+                </StackPanel>
+            </Border>
+
+            <UniformGrid Columns="2" Margin="5">
+                <Button Content="ENABLE POS" Click="Enable_Click" Margin="2" Height="30" Background="White"/>
+                <Button Content="DISCONNECT" Click="Disable_Click" Margin="2" Height="30" Background="White"/>
+                <Button Content="MOVE CW" Click="MoveCW_Click" Margin="2" Height="30" Background="White"/>
+                <Button Content="MOVE CCW" Click="MoveCCW_Click" Margin="2" Height="30" Background="White"/>
+            </UniformGrid>
+
+            <Button Content="STOP MOTOR" Click="Stop_Click" Margin="7" Height="45" 
+                    Background="#ef5350" Foreground="White" FontWeight="Bold" FontSize="14"/>
+
+            <StackPanel Orientation="Horizontal" Margin="10,5,10,15" HorizontalAlignment="Center">
+                <TextBlock Text="Speed (r/min): " VerticalAlignment="Center"/>
+                <TextBox Text="{Binding SpeedInput}" Width="50" Margin="5,0"/>
+                <Button Content="Set Speed" Padding="5,2" Background="#cfe2f3"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>
